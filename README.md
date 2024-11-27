@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Portafolio
 
-## Getting Started
+Este es mi portafolio personal, desarrollado con **Next.js** y **Tailwind CSS**, para mostrar mis habilidades y proyectos como desarrollador web y móvil.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![Img del portafolio de Keyner De la Hoz](https://firebasestorage.googleapis.com/v0/b/unidotaciones-f49fc.appspot.com/o/Preview_keyner.png?alt=media&token=7bfa5e45-3a44-40ab-b328-812b5a5d08af)
+## Tecnologías utilizadas
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js**: Framework de React para aplicaciones web modernas.
+- **React**: Biblioteca para construir interfaces de usuario.
+- **Tailwind CSS**: Framework CSS para diseño rápido y flexible.
+- **Framer Motion**: Biblioteca para animaciones avanzadas en React.
+- **Radix UI**: Componentes accesibles y personalizables.
+- **Lucide Icons**: Conjunto de íconos elegantes y modernos.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Características
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Diseño responsive**: Adaptado a dispositivos móviles, tablets y desktops.
+- **Animaciones suaves**: Implementadas con Framer Motion para mejorar la experiencia del usuario.
+- **Código limpio y escalable**: Uso de TypeScript y herramientas de linting.
+- **Componentes reutilizables**: Construidos con Tailwind CSS y Radix UI.
+- **Optimización para SEO**: Configuración de metadatos y uso de `next/image` para una carga eficiente.
 
-## Learn More
+## Scripts disponibles
 
-To learn more about Next.js, take a look at the following resources:
+En el proyecto, puedes ejecutar los siguientes comandos:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### `npm run dev`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Inicia la aplicación en modo desarrollo. Abre [http://localhost:3000](http://localhost:3000) para verla en tu navegador.
 
-## Deploy on Vercel
+### `npm run build`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Construye la aplicación para producción. Los archivos generados estarán en la carpeta `/.next`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### `npm run start`
+
+Inicia la aplicación en producción después de construirla.
+
+### `npm run lint`
+
+Ejecuta ESLint para analizar y corregir problemas en el código.
+
+## Instalación
+
+Sigue estos pasos para clonar y ejecutar el proyecto localmente:
+
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/Valdo-177/My_Portfolio
