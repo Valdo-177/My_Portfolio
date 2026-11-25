@@ -17,7 +17,7 @@ export interface ContentPiece {
 }
 
 export const contentIntro =
-  "Además de código, hago contenido: guion, rodaje, edición y motion. Traduzco ideas técnicas en piezas cortas, claras y con ritmo.";
+  "Además de código, hago contenido: guion, rodaje, edición y motion. Reels, podcasts y piezas de marca con ritmo y claridad.";
 
 export const reels: ContentPiece[] = [
   {

@@ -3,6 +3,7 @@ import Reveal from "@/components/ui/Reveal";
 import ReelPlayer from "@/components/ui/ReelPlayer";
 import PixelLoader from "@/components/pixel/PixelLoader";
 import { capabilities, contentIntro, reels } from "@/data/content";
+import Channels from "./Channels";
 
 export default function Content() {
   const reel = reels[0];
@@ -73,6 +74,8 @@ export default function Content() {
           </ul>
         </div>
       </div>
+
+      <Channels />
     </section>
   );
 }

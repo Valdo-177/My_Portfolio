@@ -16,13 +16,15 @@ const decode = (s: string) =>
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">");
 
-/** Últimos videos del canal vía el feed RSS público (se revalida cada 6 h). */
-export async function getLatestVideos(limit = 4): Promise<YouTubeVideo[]> {
+/** Últimos videos de un canal vía su feed RSS público (se revalida cada 6 h). */
+export async function getLatestVideos(
+  limit = 4,
+  channelId: string = site.social.youtubeChannelId
+): Promise<YouTubeVideo[]> {
   try {
-    const res = await fetch(
-      `https://www.youtube.com/feeds/videos.xml?channel_id=${site.social.youtubeChannelId}`,
-      { next: { revalidate: 60 * 60 * 6 } }
-    );
+    const res = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`, {
+      next: { revalidate: 60 * 60 * 6 },
+    });
     if (!res.ok) return [];
     const xml = await res.text();
     const entries = Array.from(xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g), (m) => m[1]);

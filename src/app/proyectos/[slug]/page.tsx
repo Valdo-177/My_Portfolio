@@ -19,8 +19,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: Params): Metadata {
   const p = projects.find((x) => x.slug === params.slug);
   if (!p) return {};
-  const shots = gallery[p.slug] ?? [];
-  const image = shots.find((s) => s.kind === "desktop")?.src ?? p.image;
+  const og = { url: `/og/proyecto-${p.slug}.png`, width: 1200, height: 630, alt: `${p.title}: ${p.tagline}` };
   return {
     title: `${p.title}: ${p.tagline}`,
     description: p.description,
@@ -30,8 +29,9 @@ export function generateMetadata({ params }: Params): Metadata {
       description: p.description,
       url: `/proyectos/${p.slug}`,
       type: "article",
-      ...(image ? { images: [{ url: image, alt: p.title }] } : {}),
+      images: [og],
     },
+    twitter: { card: "summary_large_image", title: `${p.title} · Caso de estudio`, description: p.tagline, images: [og.url] },
   };
 }
 

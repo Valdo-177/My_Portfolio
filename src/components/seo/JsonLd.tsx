@@ -36,6 +36,8 @@ export default function JsonLd() {
         "Edición de video",
         "Filmmaking",
         "Motion graphics",
+        "Edición de podcasts",
+        "Producción de video para YouTube",
         "Creación de contenido",
       ],
       sameAs,

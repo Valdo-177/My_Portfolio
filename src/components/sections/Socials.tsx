@@ -4,6 +4,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import Reveal from "@/components/ui/Reveal";
 import { getLatestVideos } from "@/lib/youtube";
 import { site } from "@/data/site";
+import { channels } from "@/data/channels";
 
 const fmt = new Intl.DateTimeFormat("es-CO", { day: "numeric", month: "short", year: "numeric" });
 
@@ -134,6 +135,17 @@ export default async function Socials() {
                 Mira los videos en el canal →
               </a>
             )}
+            <p className="mt-6 border-t border-line pt-4 font-mono text-[11px] uppercase tracking-[0.14em] text-dim">
+              También grabo y edito en{" "}
+              {channels.map((c, i) => (
+                <span key={c.handle}>
+                  {i > 0 && " · "}
+                  <a href={c.url} target="_blank" rel="noreferrer" className="text-muted transition-colors hover:text-blue-bright">
+                    {c.name}
+                  </a>
+                </span>
+              ))}
+            </p>
           </div>
         </Reveal>
       </div>

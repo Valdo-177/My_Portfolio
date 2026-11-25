@@ -31,9 +31,9 @@ export function generateMetadata({ params }: Params): Metadata {
       modifiedTime: p.updated ?? p.date,
       authors: [site.name],
       tags: p.tags,
-      images: [{ url: p.cover, alt: p.coverAlt }],
+      images: [{ url: `/og/blog-${p.slug}.png`, width: 1200, height: 630, alt: p.title }],
     },
-    twitter: { card: "summary_large_image", title: p.title, description: p.description, images: [p.cover] },
+    twitter: { card: "summary_large_image", title: p.title, description: p.description, images: [`/og/blog-${p.slug}.png`] },
   };
 }
 

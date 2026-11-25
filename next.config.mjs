@@ -4,7 +4,10 @@ const nextConfig = {
   distDir: process.env.NEXT_DIST_DIR || ".next",
   images: {
     formats: ["image/avif", "image/webp"],
-    remotePatterns: [{ protocol: "https", hostname: "i.ytimg.com" }],
+    remotePatterns: [
+      { protocol: "https", hostname: "i.ytimg.com" },
+      { protocol: "https", hostname: "yt3.googleusercontent.com" },
+    ],
   },
   experimental: {
     // El PDF de reglas se lee en el servidor para adjuntarlo por correo

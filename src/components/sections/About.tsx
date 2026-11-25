@@ -35,7 +35,7 @@ const SERVICES = [
   {
     icon: Clapperboard,
     title: "Contenido & video",
-    text: "Guion, rodaje, edición y motion graphics para reels y piezas de marca.",
+    text: "Guion, rodaje, edición y motion para reels, podcasts y piezas de marca.",
   },
 ];
 

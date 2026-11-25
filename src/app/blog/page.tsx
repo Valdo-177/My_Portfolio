@@ -10,7 +10,13 @@ export const metadata: Metadata = {
   description:
     "Artículos de Keyner De la Hoz sobre desarrollo web y móvil, inteligencia artificial aplicada, motion graphics, Alight Motion y creación de contenido.",
   alternates: { canonical: "/blog" },
-  openGraph: { title: "Blog · Keyner De la Hoz", url: "/blog", type: "website" },
+  openGraph: {
+    title: "Blog · Keyner De la Hoz",
+    url: "/blog",
+    type: "website",
+    images: [{ url: "/og/blog.png", width: 1200, height: 630, alt: "Blog de Keyner De la Hoz" }],
+  },
+  twitter: { card: "summary_large_image", images: ["/og/blog.png"] },
 };
 
 export default function BlogIndex() {
