@@ -8,8 +8,8 @@ import { cn } from "@/lib/utils";
 
 const LINKS = [
   { id: "proyectos", label: "Proyectos" },
+  { id: "contenido", label: "Contenido" },
   { id: "sobre-mi", label: "Sobre mí" },
-  { id: "stack", label: "Stack" },
   { id: "contacto", label: "Contacto" },
 ];
 

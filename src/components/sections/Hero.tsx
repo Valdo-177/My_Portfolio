@@ -1,88 +1,90 @@
-import { ArrowDownRight, Github } from "lucide-react";
-import DotField from "@/components/pixel/DotField";
-import PixelLoader from "@/components/pixel/PixelLoader";
-import ScrambleText from "@/components/pixel/ScrambleText";
+import { ArrowRight, ArrowDown } from "lucide-react";
+import MorphGrid from "@/components/pixel/MorphGrid";
+import RoleCycler from "@/components/pixel/RoleCycler";
 import Clock from "@/components/ui/Clock";
-import { projects } from "@/data/projects";
 import { site } from "@/data/site";
 
-export default function Hero() {
-  const stats = [
-    { k: "Proyectos", v: String(projects.length).padStart(2, "0") },
-    { k: "Enfoque", v: "WEB+MOBILE" },
-    { k: "Base", v: "BAQ·CO" },
-  ];
+function Asterisk({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square">
+      <path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9L4.9 19.1" />
+    </svg>
+  );
+}
 
+export default function Hero() {
   return (
     <section id="inicio" className="relative flex min-h-[100svh] flex-col overflow-hidden pt-16">
-      {/* Fondo */}
-      <div className="absolute inset-0">
-        <DotField className="mask-fade-b" />
-        <div className="absolute left-1/2 top-[38%] h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue/20 blur-[120px]" />
-      </div>
+      {/* Fondo sutil */}
+      <div className="absolute inset-0 bg-dots opacity-40 mask-radial" aria-hidden />
+      <div className="absolute -right-40 top-1/3 h-[480px] w-[480px] rounded-full bg-blue/10 blur-[140px]" aria-hidden />
 
-      <div className="container relative flex flex-1 flex-col justify-center py-16">
-        <div className="mb-8 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-xs uppercase tracking-[0.2em] text-muted">
-          <PixelLoader cell={4} gap={2} />
-          <span>{site.role}</span>
-          <span className="text-dim">/</span>
-          <span>{site.location}</span>
-        </div>
+      <div className="container relative grid flex-1 items-center gap-12 py-12 lg:grid-cols-[1.15fr_1fr] lg:gap-8">
+        {/* Texto */}
+        <div className="flex flex-col">
+          <div className="flex items-start justify-between gap-6 lg:max-w-[38rem]">
+            <Asterisk className="h-9 w-9 animate-[spin_14s_linear_infinite] text-blue-bright" />
+            <span className="pt-1 text-right font-mono text-[10px] uppercase leading-relaxed tracking-[0.2em] text-muted">
+              Código & contenido
+              <br />
+              {site.location}
+            </span>
+          </div>
 
-        <h1 className="font-pixel uppercase leading-[0.86] tracking-tight">
-          <span className="block text-[clamp(3.25rem,13vw,10.5rem)]">
-            <ScrambleText text="Keyner" speed={34} />
-          </span>
-          <span className="block text-[clamp(3.25rem,13vw,10.5rem)] text-blue-bright text-glow">
-            <ScrambleText text="De la Hoz" speed={34} delay={180} />
-          </span>
-        </h1>
+          <h1 className="mt-8 font-sans text-[clamp(3rem,9vw,7.25rem)] font-medium uppercase leading-[0.92] tracking-[-0.045em]">
+            <span className="flex items-center gap-[0.18em]">
+              Keyner
+              <span className="inline-block h-[0.16em] w-[0.16em] translate-y-[0.02em] bg-blue-bright shadow-[0_0_18px_rgba(82,168,255,0.7)]" />
+            </span>
+            <span className="block">De la Hoz</span>
+          </h1>
 
-        <p className="mt-8 max-w-xl text-pretty text-lg text-muted sm:text-xl">
-          Construyo productos web y móviles de punta a punta: desde plataformas médicas y apps con IA
-          on-device hasta landings que convierten.{" "}
-          <span className="text-white">Diseño, código y detalle.</span>
-        </p>
+          <div className="mt-8 flex items-center gap-3 font-mono text-base text-white sm:text-lg">
+            <span className="text-blue-bright">&gt;</span>
+            <RoleCycler roles={site.roles} className="min-h-[1.5em]" />
+            <span className="-ml-1 inline-block h-[1.1em] w-[0.55em] animate-caret bg-blue-bright" aria-hidden />
+          </div>
 
-        <div className="mt-10 flex flex-wrap items-center gap-3">
-          <a
-            href="#proyectos"
-            className="group inline-flex h-12 items-center gap-3 rounded-md bg-blue px-6 font-medium text-white transition-all hover:bg-blue-glow hover:glow-blue"
-          >
-            Ver proyectos
-            <ArrowDownRight size={18} className="transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
-          </a>
-          <a
-            href={site.links.github}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex h-12 items-center gap-3 rounded-md border border-line bg-ink/60 px-6 font-medium text-white backdrop-blur transition-colors hover:border-white/30"
-          >
-            <Github size={18} />
-            GitHub
-          </a>
-        </div>
-      </div>
+          <p className="mt-6 max-w-md text-pretty text-[15px] leading-relaxed text-muted">{site.intro}</p>
 
-      {/* Barra de estado inferior */}
-      <div className="relative border-t border-line bg-ink/60 backdrop-blur">
-        <div className="container grid grid-cols-2 md:grid-cols-4">
-          {stats.map((s, i) => (
-            <div
-              key={s.k}
-              className={`flex flex-col gap-1 border-line py-5 pr-4 odd:border-r even:pl-4 md:border-r md:pl-6 md:first:pl-0 ${
-                i >= 2 ? "max-md:border-t" : ""
-              }`}
+          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+            <a
+              href="#proyectos"
+              className="group inline-flex items-center gap-3 border-b border-white/30 pb-1 text-sm font-medium text-white transition-colors hover:border-blue-bright hover:text-blue-bright"
             >
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-dim">{s.k}</span>
-              <span className="font-pixel text-xl sm:text-2xl">{s.v}</span>
-            </div>
-          ))}
-          <div className="flex flex-col gap-1 border-line py-5 pl-4 max-md:border-t md:pl-6">
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-dim">Hora local</span>
-            <Clock className="font-pixel text-xl tabular-nums text-blue-bright sm:text-2xl" />
+              Ver proyectos
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            </a>
+            <a
+              href="#contenido"
+              className="group inline-flex items-center gap-3 border-b border-white/15 pb-1 text-sm font-medium text-muted transition-colors hover:border-white hover:text-white"
+            >
+              Ver contenido
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            </a>
           </div>
         </div>
+
+        {/* Composición */}
+        <div className="mx-auto w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px]">
+          <MorphGrid />
+        </div>
+      </div>
+
+      {/* Pie del hero */}
+      <div className="container relative flex items-end justify-between pb-8 font-mono text-[10px] uppercase tracking-[0.2em] text-dim">
+        <span className="hidden sm:block">
+          Hora local · <Clock className="tabular-nums text-muted" />
+        </span>
+        <a href="#proyectos" className="flex flex-col items-center gap-3 text-muted transition-colors hover:text-white sm:absolute sm:left-1/2 sm:-translate-x-1/2">
+          Scroll
+          <span className="relative h-10 w-px overflow-hidden bg-line">
+            <span className="absolute inset-x-0 top-0 h-1/2 animate-[scan_1.8s_ease-in-out_infinite] bg-blue-bright" />
+          </span>
+        </a>
+        <span className="flex items-center gap-2">
+          <ArrowDown size={12} /> {site.available ? "Disponible para proyectos" : "Portafolio 2026"}
+        </span>
       </div>
     </section>
   );

@@ -18,7 +18,7 @@ export default function Contact() {
 
       <div className="container relative py-28 sm:py-40">
         <span className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-muted">
-          <span className="text-blue-bright">[03]</span>
+          <span className="text-blue-bright">[04]</span>
           <span className="h-px w-8 bg-line" />
           Contacto
         </span>

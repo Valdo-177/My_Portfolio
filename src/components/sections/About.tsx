@@ -1,4 +1,4 @@
-import { Code2, Smartphone, LayoutTemplate, Sparkles } from "lucide-react";
+import { Code2, Smartphone, LayoutTemplate, Clapperboard } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Reveal from "@/components/ui/Reveal";
 import PixelLoader from "@/components/pixel/PixelLoader";
@@ -33,9 +33,9 @@ const SERVICES = [
     text: "Sitios corporativos rápidos, con SEO, animación y foco en conversión.",
   },
   {
-    icon: Sparkles,
-    title: "Motion & 3D",
-    text: "Microinteracciones con Motion y escenas 3D con Three.js / R3F.",
+    icon: Clapperboard,
+    title: "Contenido & video",
+    text: "Guion, rodaje, edición y motion graphics para reels y piezas de marca.",
   },
 ];
 
@@ -70,7 +70,7 @@ function PixelAvatar() {
 export default function About() {
   return (
     <section id="sobre-mi" className="container scroll-mt-16 py-24 sm:py-32">
-      <SectionHeader index="02" label="Quién soy" title="Sobre mí" />
+      <SectionHeader index="03" label="Quién soy" title="Sobre mí" />
 
       <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,420px)_1fr] lg:gap-16">
         <Reveal>
@@ -80,8 +80,8 @@ export default function About() {
         <div className="flex flex-col gap-10">
           <Reveal delay={0.1}>
             <p className="text-pretty text-2xl leading-snug text-white sm:text-3xl">
-              Soy desarrollador web y móvil. Me gusta llevar un producto desde la idea hasta producción,
-              <span className="text-muted"> cuidando la arquitectura, el rendimiento y cada detalle de la interfaz.</span>
+              Soy desarrollador web y móvil, y creador de contenido. Me gusta llevar una idea hasta producción,
+              <span className="text-muted"> ya sea un producto digital o una pieza en video, cuidando cada detalle.</span>
             </p>
           </Reveal>
           <Reveal delay={0.15}>
@@ -89,7 +89,7 @@ export default function About() {
               He construido plataformas para clínicas y centros médicos, sitios para constructoras y
               contratistas, y apps móviles que corren IA directamente en el dispositivo. Trabajo con
               TypeScript de punta a punta, y elijo la herramienta según el problema: Next.js en la web,
-              React Native o Flutter en el móvil.
+              React Native o Flutter en el móvil. Y cuando la idea se cuenta mejor en video, la grabo, la edito y la animo.
             </p>
           </Reveal>
 
