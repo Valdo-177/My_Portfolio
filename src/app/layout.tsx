@@ -1,53 +1,52 @@
 import type { Metadata } from "next";
-import {Manrope} from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import { GeistPixelSquare, GeistPixelGrid, GeistPixelCircle } from "geist/font/pixel";
 import "./globals.css";
-import Nav from "@/components/Layout/Nav";
-import Footer from "@/components/Layout/Footer";
+import Nav from "@/components/layout/Nav";
+import Footer from "@/components/layout/Footer";
+import BootScreen from "@/components/pixel/BootScreen";
 
-const manrope = Manrope({ subsets: ["latin"] });
+const PREVIEW =
+  "https://firebasestorage.googleapis.com/v0/b/unidotaciones-f49fc.appspot.com/o/Preview_keyner.png?alt=media&token=7bfa5e45-3a44-40ab-b328-812b5a5d08af";
 
 export const metadata: Metadata = {
   title: "Keyner De la Hoz | Web & Mobile Developer",
   description:
-    "Portafolio de Keyner De la Hoz, desarrollador web y móvil especializado en crear soluciones digitales innovadoras con tecnologías modernas.",
+    "Portafolio de Keyner De la Hoz, desarrollador web y móvil. Productos con Next.js, React Native, Flutter y más.",
   openGraph: {
     title: "Keyner De la Hoz | Web & Mobile Developer",
     description:
-      "Bienvenido al portafolio de Keyner De la Hoz. Descubre proyectos destacados, experiencia en desarrollo web y móvil, y soluciones tecnológicas hechas a medida.",
+      "Proyectos destacados en desarrollo web y móvil: landings, plataformas médicas, apps con IA on-device y más.",
     type: "website",
-    images: {
-      url: "https://firebasestorage.googleapis.com/v0/b/unidotaciones-f49fc.appspot.com/o/Preview_keyner.png?alt=media&token=7bfa5e45-3a44-40ab-b328-812b5a5d08af",
-      width: 1200,
-      height: 630,
-      alt: "Vista previa del portafolio de Keyner De la Hoz",
-    },
-    siteName: "Keyner De la Hoz Portfolio",
-    locale: "es_ES", // O "en_US" si el portafolio está en inglés.
+    images: { url: PREVIEW, width: 1200, height: 630, alt: "Portafolio de Keyner De la Hoz" },
+    siteName: "Keyner De la Hoz",
+    locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     title: "Keyner De la Hoz | Web & Mobile Developer",
-    description:
-      "Explora el portafolio de Keyner De la Hoz, desarrollador web y móvil con pasión por crear soluciones digitales impactantes.",
-    images: [
-      "https://firebasestorage.googleapis.com/v0/b/unidotaciones-f49fc.appspot.com/o/Preview_keyner.png?alt=media&token=7bfa5e45-3a44-40ab-b328-812b5a5d08af",
-    ],
+    description: "Desarrollador web y móvil. Mira los proyectos.",
+    images: [PREVIEW],
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const fonts = [
+    GeistSans.variable,
+    GeistMono.variable,
+    GeistPixelSquare.variable,
+    GeistPixelGrid.variable,
+    GeistPixelCircle.variable,
+  ].join(" ");
+
   return (
-    <html lang="en">
-      <body
-        className={`${manrope.className} antialiased bg-bgPrimary text-white`}
-      >
-        <Nav/>
+    <html lang="es" className={fonts}>
+      <body>
+        <BootScreen />
+        <Nav />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

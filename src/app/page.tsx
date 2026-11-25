@@ -1,9 +1,17 @@
-import HomePage from "@/pages/HomePage";
+import Hero from "@/components/sections/Hero";
+import StackMarquee from "@/components/sections/StackMarquee";
+import Projects from "@/components/sections/Projects";
+import About from "@/components/sections/About";
+import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   return (
-    <>
-      <HomePage />
-    </>
+    <main>
+      <Hero />
+      <StackMarquee />
+      <Projects />
+      <About />
+      <Contact />
+    </main>
   );
 }
