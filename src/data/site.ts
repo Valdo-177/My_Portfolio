@@ -1,5 +1,4 @@
 // Datos personales y de contacto del portafolio.
-// TODO(Keyner): completa email y LinkedIn con los tuyos reales.
 export const site = {
   name: "Keyner De la Hoz",
   shortName: "KDLH",
@@ -17,10 +16,17 @@ export const site = {
     "Construyo productos web y móviles, y cuento historias en video. Código y contenido, con el mismo nivel de detalle.",
   location: "Barranquilla, CO",
   available: true,
-  email: "", // ej: "hola@tudominio.com"
+  email: "keyerdelahozsteam@gmail.com",
   links: {
     github: "https://github.com/Valdo-177",
-    linkedin: "", // ej: "https://www.linkedin.com/in/tu-usuario"
+    linkedin: "https://www.linkedin.com/in/keyner-oswaldo-de-la-hoz-hincapi%C3%A9-b1bb58325/",
+    instagram: "https://www.instagram.com/__keyner____/",
+    youtube: "https://www.youtube.com/@kenerdelahoz4647",
+  },
+  social: {
+    instagramHandle: "@__keyner____",
+    youtubeHandle: "@kenerdelahoz4647",
+    youtubeChannelId: "UCKfM7K_MXSnId0owDfiHunA",
   },
   cvUrl: "", // ej: "/cv-keyner.pdf" (ponlo en /public)
 };

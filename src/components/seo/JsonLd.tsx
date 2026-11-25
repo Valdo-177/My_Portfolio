@@ -5,7 +5,7 @@ import { reels } from "@/data/content";
 /** Datos estructurados schema.org: Person, WebSite, proyectos y videos. */
 export default function JsonLd() {
   const url = site.url;
-  const sameAs = [site.links.github, site.links.linkedin].filter(Boolean);
+  const sameAs = [site.links.github, site.links.linkedin, site.links.instagram, site.links.youtube].filter(Boolean);
 
   const graph = [
     {

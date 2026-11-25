@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpRight, Lock } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import PixelReveal from "@/components/pixel/PixelReveal";
 import ScrambleText from "@/components/pixel/ScrambleText";
 import type { Project } from "@/data/projects";
@@ -108,7 +108,9 @@ export default function ProjectCard({
         <div className="flex items-start justify-between gap-4">
           <div>
             <h3 className="font-pixel text-2xl uppercase leading-tight sm:text-3xl">
-              <ScrambleText text={project.title} hover />
+              <a href={`/proyectos/${project.slug}`} className="after:absolute after:inset-0 after:z-[1] focus-visible:outline-none">
+                <ScrambleText text={project.title} hover />
+              </a>
             </h3>
             <p className="mt-1 text-sm text-muted">{project.tagline}</p>
           </div>
@@ -117,7 +119,7 @@ export default function ProjectCard({
 
         {featured && (
           <>
-            <p className="text-pretty text-sm leading-relaxed text-white/75">{project.description}</p>
+            <p className="text-pretty text-sm text-white/75">{project.description}</p>
             <ul className="flex flex-col gap-2">
               {project.highlights.map((h) => (
                 <li key={h} className="flex gap-3 text-sm text-muted">
@@ -146,7 +148,7 @@ export default function ProjectCard({
               href={project.liveUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-white transition-colors hover:text-blue-bright"
+              className="relative z-[2] inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-white transition-colors hover:text-blue-bright"
             >
               <span className="h-[6px] w-[6px] bg-blue-bright" />
               Ver en vivo
@@ -158,11 +160,8 @@ export default function ProjectCard({
               {project.kind === "mobile" ? "En desarrollo" : "Privado"}
             </span>
           )}
-          <span
-            className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-dim"
-            title="El código fuente es privado"
-          >
-            <Lock size={11} /> Repo privado
+          <span className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-muted transition-colors group-hover:text-blue-bright">
+            Ver caso <ArrowRight size={13} className="transition-transform group-hover:translate-x-1" />
           </span>
         </div>
       </div>

@@ -12,8 +12,14 @@ export default function Footer() {
         <span className="flex items-center gap-2">
           Barranquilla <Clock className="text-muted tabular-nums" />
         </span>
-        <span>Next.js · Geist · Pixel</span>
-        <a href="#inicio" className="flex items-center gap-2 text-muted transition-colors hover:text-white">
+        <span className="flex flex-wrap gap-x-4 gap-y-1">
+          <a href={site.links.instagram} target="_blank" rel="noreferrer" className="transition-colors hover:text-white">Instagram</a>
+          <a href={site.links.youtube} target="_blank" rel="noreferrer" className="transition-colors hover:text-white">YouTube</a>
+          <a href={site.links.linkedin} target="_blank" rel="noreferrer" className="transition-colors hover:text-white">LinkedIn</a>
+          <a href={site.links.github} target="_blank" rel="noreferrer" className="transition-colors hover:text-white">GitHub</a>
+          <a href="/blog" className="transition-colors hover:text-white">Blog</a>
+        </span>
+        <a href="#top" className="flex items-center gap-2 text-muted transition-colors hover:text-white">
           Volver arriba <ArrowUp size={12} />
         </a>
       </div>

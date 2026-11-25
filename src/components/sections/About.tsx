@@ -70,7 +70,7 @@ function PixelAvatar() {
 export default function About() {
   return (
     <section id="sobre-mi" className="container scroll-mt-16 py-24 sm:py-32">
-      <SectionHeader index="03" label="Quién soy" title="Sobre mí" />
+      <SectionHeader index="04" label="Quién soy" title="Sobre mí" />
 
       <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,420px)_1fr] lg:gap-16">
         <Reveal>
@@ -79,13 +79,13 @@ export default function About() {
 
         <div className="flex flex-col gap-10">
           <Reveal delay={0.1}>
-            <p className="text-pretty text-2xl leading-snug text-white sm:text-3xl">
+            <p className="text-pretty text-2xl leading-[1.2] text-white sm:text-3xl">
               Soy desarrollador web y móvil, y creador de contenido. Me gusta llevar una idea hasta producción,
               <span className="text-muted"> ya sea un producto digital o una pieza en video, cuidando cada detalle.</span>
             </p>
           </Reveal>
           <Reveal delay={0.15}>
-            <p className="max-w-2xl text-pretty leading-relaxed text-muted">
+            <p className="max-w-2xl text-pretty text-muted">
               He construido plataformas para clínicas y centros médicos, sitios para constructoras y
               contratistas, y apps móviles que corren IA directamente en el dispositivo. Trabajo con
               TypeScript de punta a punta, y elijo la herramienta según el problema: Next.js en la web,
@@ -102,7 +102,7 @@ export default function About() {
                     <span className="font-mono text-xs text-dim">0{i + 1}</span>
                   </div>
                   <h3 className="mt-6 font-pixel text-xl uppercase">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{s.text}</p>
+                  <p className="mt-2 text-sm text-muted">{s.text}</p>
                 </Reveal>
               </li>
             ))}

@@ -14,6 +14,16 @@ const config: Config = {
       screens: { "2xl": "1280px" },
     },
     extend: {
+      // Interlineado más compacto que el default de Tailwind
+      fontSize: {
+        xs: ["0.75rem", { lineHeight: "1.1rem" }],
+        sm: ["0.875rem", { lineHeight: "1.3rem" }],
+        base: ["1rem", { lineHeight: "1.45rem" }],
+        lg: ["1.125rem", { lineHeight: "1.6rem" }],
+        xl: ["1.25rem", { lineHeight: "1.7rem" }],
+        "2xl": ["1.5rem", { lineHeight: "1.9rem" }],
+        "3xl": ["1.875rem", { lineHeight: "2.2rem" }],
+      },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
         mono: ["var(--font-geist-mono)", "ui-monospace", "monospace"],

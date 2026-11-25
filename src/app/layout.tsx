@@ -6,6 +6,7 @@ import "./globals.css";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import BootScreen from "@/components/pixel/BootScreen";
+import PixelCurtain from "@/components/pixel/PixelCurtain";
 import JsonLd from "@/components/seo/JsonLd";
 import { site } from "@/data/site";
 
@@ -80,6 +81,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <JsonLd />
         <BootScreen />
+        <PixelCurtain />
         <Nav />
         {children}
         <Footer />

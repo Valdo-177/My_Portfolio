@@ -21,10 +21,10 @@ export default function Hero() {
 
       <div className="container relative grid flex-1 items-center gap-12 py-12 lg:grid-cols-[1.15fr_1fr] lg:gap-8">
         {/* Texto */}
-        <div className="flex flex-col">
-          <div className="flex items-start justify-between gap-6 lg:max-w-[38rem]">
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+          <div className="flex w-full items-start justify-center gap-6 lg:max-w-[38rem] lg:justify-between">
             <Asterisk className="h-9 w-9 animate-[spin_14s_linear_infinite] text-blue-bright" />
-            <span className="pt-1 text-right font-mono text-[10px] uppercase leading-relaxed tracking-[0.2em] text-muted">
+            <span className="hidden pt-1 text-right font-mono lg:block text-[10px] uppercase tracking-[0.2em] text-muted">
               Código & contenido
               <br />
               {site.location}
@@ -32,7 +32,7 @@ export default function Hero() {
           </div>
 
           <h1 className="mt-8 font-sans text-[clamp(3rem,9vw,7.25rem)] font-medium uppercase leading-[0.92] tracking-[-0.045em]">
-            <span className="flex items-center gap-[0.18em]">
+            <span className="flex items-center justify-center gap-[0.18em] lg:justify-start">
               Keyner
               <span className="inline-block h-[0.16em] w-[0.16em] translate-y-[0.02em] bg-blue-bright shadow-[0_0_18px_rgba(82,168,255,0.7)]" />
             </span>
@@ -45,9 +45,9 @@ export default function Hero() {
             <span className="-ml-1 inline-block h-[1.1em] w-[0.55em] animate-caret bg-blue-bright" aria-hidden />
           </div>
 
-          <p className="mt-6 max-w-md text-pretty text-[15px] leading-relaxed text-muted">{site.intro}</p>
+          <p className="mt-6 hidden max-w-md text-pretty text-[15px] text-muted sm:block">{site.intro}</p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 lg:justify-start">
             <a
               href="#proyectos"
               className="group inline-flex items-center gap-3 border-b border-white/30 pb-1 text-sm font-medium text-white transition-colors hover:border-blue-bright hover:text-blue-bright"
@@ -66,13 +66,13 @@ export default function Hero() {
         </div>
 
         {/* Composición */}
-        <div className="mx-auto w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px]">
+        <div className="mx-auto hidden w-full max-w-[500px] lg:block">
           <MorphGrid />
         </div>
       </div>
 
       {/* Pie del hero */}
-      <div className="container relative flex items-end justify-between pb-8 font-mono text-[10px] uppercase tracking-[0.2em] text-dim">
+      <div className="container relative flex items-end justify-center pb-8 sm:justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-dim">
         <span className="hidden sm:block">
           Hora local · <Clock className="tabular-nums text-muted" />
         </span>
@@ -82,7 +82,7 @@ export default function Hero() {
             <span className="absolute inset-x-0 top-0 h-1/2 animate-[scan_1.8s_ease-in-out_infinite] bg-blue-bright" />
           </span>
         </a>
-        <span className="flex items-center gap-2">
+        <span className="hidden items-center gap-2 sm:flex">
           <ArrowDown size={12} /> {site.available ? "Disponible para proyectos" : "Portafolio 2026"}
         </span>
       </div>

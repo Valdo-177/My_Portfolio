@@ -32,7 +32,7 @@ export default function Content() {
             <h3 className="mt-5 text-balance text-3xl font-medium leading-tight tracking-tight sm:text-4xl">
               {reel.title}
             </h3>
-            <p className="mt-5 max-w-xl text-pretty leading-relaxed text-muted">{reel.description}</p>
+            <p className="mt-5 max-w-xl text-pretty text-muted">{reel.description}</p>
           </Reveal>
 
           <Reveal delay={0.1}>
@@ -66,7 +66,7 @@ export default function Content() {
                 <Reveal delay={0.05 * i} className="grid gap-2 sm:grid-cols-[3rem_1fr_1.4fr] sm:items-baseline sm:gap-6">
                   <span className="font-mono text-xs text-blue-bright">0{i + 1}</span>
                   <h4 className="font-pixel text-xl uppercase">{c.title}</h4>
-                  <p className="text-sm leading-relaxed text-muted">{c.text}</p>
+                  <p className="text-sm text-muted">{c.text}</p>
                 </Reveal>
               </li>
             ))}
